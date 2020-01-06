@@ -172,8 +172,8 @@ bar {
         # status_command i3status
 }
 
-bindsym $mod+shift+x exec i3lock
-bindsym $mod+shift+z exec i3lock && systemctl suspend
+bindsym --release $mod+shift+x exec /bin/bash -c "slock -m 'Locked by $USER'"
+bindsym --release $mod+shift+z exec systemctl suspend && /bin/bash -c "slock -m 'Locked by $USER'"
 
 for_window [class=".*"] border pixel 7
 gaps inner 20
